@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: galactic-archive-rag
+    name: galactic-archive-rag-backend
     runtime: python
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
@@ -8,3 +8,12 @@ services:
       - key: GEMINI_API_KEY
         sync: false
     healthCheckPath: /api/documents
+
+  - type: web
+    name: galactic-archive-rag-frontend
+    runtime: static
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: ./frontend/dist
+    envVars:
+      - key: VITE_API_HOST
+        sync: false

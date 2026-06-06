@@ -3,7 +3,7 @@ import Chat from './components/Chat';
 import Documents from './components/Documents';
 import Evaluation from './components/Evaluation';
 
-const API_HOST = 'http://127.0.0.1:8000';
+const API_HOST = import.meta.env.VITE_API_HOST || 'http://127.0.0.1:8000';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('chat');
