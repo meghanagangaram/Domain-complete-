@@ -1,6 +1,0 @@
-fastapi
-uvicorn[standard]
-gunicorn
-google-genai
-numpy
-pydantic

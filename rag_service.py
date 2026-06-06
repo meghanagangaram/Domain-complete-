@@ -6,8 +6,9 @@ import numpy as np
 from google import genai
 from google.genai import types
 
-DOCS_DIR = os.path.join("backend", "data", "documents")
-STORE_FILE = os.path.join("backend", "data", "vector_store.json")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DOCS_DIR = os.path.join(BASE_DIR, "data", "documents")
+STORE_FILE = os.path.join(BASE_DIR, "data", "vector_store.json")
 
 # Initialize Gemini Client
 # It will automatically pick up GEMINI_API_KEY from environment.

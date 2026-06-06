@@ -6,7 +6,8 @@ from google import genai
 from google.genai import types
 from rag_service import retrieve_similar_chunks, generate_rag_answer, client
 
-EVAL_RESULTS_FILE = os.path.join("backend", "data", "eval_results.json")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+EVAL_RESULTS_FILE = os.path.join(BASE_DIR, "data", "eval_results.json")
 
 # 20 Ground Truth Q&A pairs for the Galactic Archive
 GROUND_TRUTH_DATASET = [
